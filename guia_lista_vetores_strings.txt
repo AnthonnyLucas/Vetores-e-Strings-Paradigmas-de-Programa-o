@@ -1,0 +1,509 @@
+================================================================================
+        GUIA DE USO - LISTA DE EXERCICIOS: VETORES E STRINGS
+        UFRPE - Unidade Academica de Belo Jardim
+        Disciplina: Paradigmas de Programacao
+================================================================================
+
+Este documento explica o funcionamento de cada questao do arquivo
+"lista_vetores_strings_comentado.py" e como voce pode modificar os valores
+de entrada para testar diferentes cenarios.
+
+--------------------------------------------------------------------------------
+COMO LER ESTE GUIA
+--------------------------------------------------------------------------------
+
+Cada questao segue o formato abaixo:
+
+  QUESTAO-N | NOME DA QUESTAO
+  O que faz     : descricao do comportamento
+  Parametros    : o que a funcao recebe como entrada
+  Retorna       : o que a funcao devolve como saida
+  Como modificar: instrucoes para alterar os valores de teste
+  Exemplos      : outros exemplos que voce pode testar
+  Cuidados      : avisos sobre entradas que podem causar erros
+
+================================================================================
+PARTE I - VETORES
+================================================================================
+
+--------------------------------------------------------------------------------
+QUESTAO-1 | SOMA_DE_ELEMENTOS
+--------------------------------------------------------------------------------
+  O que faz     : Soma todos os numeros de uma lista e retorna o total.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [1, 2, 3, 4]
+
+  Retorna       : Um numero inteiro com a soma de todos os elementos.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(soma_elementos([1, 2, 3, 4]))
+                                        ^-----------^
+                                        mude estes valores
+
+  Exemplos      :
+                  soma_elementos([10, 20, 30])      -> resultado: 60
+                  soma_elementos([0, 0, 0])          -> resultado: 0
+                  soma_elementos([-5, 5])            -> resultado: 0
+                  soma_elementos([100])              -> resultado: 100
+
+  Cuidados      : A lista nao pode estar vazia (sem nenhum elemento).
+                  soma_elementos([]) causara comportamento incorreto.
+
+--------------------------------------------------------------------------------
+QUESTAO-2 | CONTAR_NUMEROS_PARES
+--------------------------------------------------------------------------------
+  O que faz     : Percorre a lista e conta quantos numeros sao pares.
+                  Um numero par e aquele divisivel por 2 (ex: 2, 4, 6, 8...).
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [1, 2, 3, 4, 5, 6]
+
+  Retorna       : Um numero inteiro com a quantidade de pares encontrados.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(contar_pares([1, 2, 3, 4, 5, 6]))
+                                      ^-----------------^
+                                      mude estes valores
+
+  Exemplos      :
+                  contar_pares([2, 4, 6, 8])         -> resultado: 4
+                  contar_pares([1, 3, 5, 7])         -> resultado: 0
+                  contar_pares([0, 1, 2])             -> resultado: 2 (0 e par)
+                  contar_pares([-2, -3, -4])          -> resultado: 2
+
+  Cuidados      : O numero 0 e considerado par.
+                  Numeros negativos pares tambem sao contados (ex: -4, -2).
+
+--------------------------------------------------------------------------------
+QUESTAO-3 | MAIOR_NUMERO
+--------------------------------------------------------------------------------
+  O que faz     : Percorre a lista inteira e encontra o maior valor.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [3, 7, 2, 9, 5]
+
+  Retorna       : O maior numero encontrado na lista.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(maior_numero([3, 7, 2, 9, 5]))
+                                      ^-------------^
+                                      mude estes valores
+
+  Exemplos      :
+                  maior_numero([1, 1, 1])             -> resultado: 1
+                  maior_numero([-3, -1, -5])          -> resultado: -1
+                  maior_numero([42])                  -> resultado: 42
+                  maior_numero([0, 100, 50])          -> resultado: 100
+
+  Cuidados      : A lista nao pode estar vazia.
+                  Se todos os numeros forem iguais, retorna esse numero.
+
+--------------------------------------------------------------------------------
+QUESTAO-4 | CONTAR_ELEMENTOS_MAIORES_QUE_UM_VALOR
+--------------------------------------------------------------------------------
+  O que faz     : Conta quantos elementos da lista sao ESTRITAMENTE maiores
+                  que o valor X informado. Elementos iguais a X nao contam.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  x     -> o valor de referencia para comparacao.
+                  Exemplo: lista = [1, 5, 8, 2, 10], x = 5
+
+  Retorna       : Um numero inteiro com a quantidade de elementos maiores que X.
+
+  Como modificar: Altere a lista e/ou o valor de X no print:
+                  print(contar_maiores([1, 5, 8, 2, 10], 5))
+                                        ^-----------^    ^
+                                        lista            X
+
+  Exemplos      :
+                  contar_maiores([1, 2, 3], 2)        -> resultado: 1 (apenas 3)
+                  contar_maiores([5, 5, 5], 5)        -> resultado: 0 (iguais nao contam)
+                  contar_maiores([10, 20, 30], 0)     -> resultado: 3
+                  contar_maiores([1, 2, 3], 10)       -> resultado: 0
+
+  Cuidados      : Elementos IGUAIS ao valor X nao sao contados.
+                  Apenas os estritamente maiores entram na contagem.
+
+--------------------------------------------------------------------------------
+QUESTAO-5 | SOMA_DOS_PARES
+--------------------------------------------------------------------------------
+  O que faz     : Soma apenas os numeros pares presentes na lista,
+                  ignorando os impares.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [1, 2, 3, 4, 5, 6]
+
+  Retorna       : A soma de todos os numeros pares da lista.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(soma_pares([1, 2, 3, 4, 5, 6]))
+                                    ^-----------------^
+                                    mude estes valores
+
+  Exemplos      :
+                  soma_pares([1, 3, 5])               -> resultado: 0 (nenhum par)
+                  soma_pares([2, 4, 6])               -> resultado: 12
+                  soma_pares([0, 1, 2])               -> resultado: 2 (0 + 2)
+                  soma_pares([-2, -4, 1])             -> resultado: -6
+
+  Cuidados      : Se nao houver nenhum numero par, o resultado sera 0.
+                  O numero 0 e considerado par e entra na soma.
+
+--------------------------------------------------------------------------------
+QUESTAO-6 | VERIFICAR_EXISTENCIA_DE_ELEMENTO
+--------------------------------------------------------------------------------
+  O que faz     : Verifica se um valor X existe dentro da lista.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  x     -> o valor a ser procurado.
+                  Exemplo: lista = [4, 7, 1, 9], x = 7
+
+  Retorna       : True  (verdadeiro) se X estiver na lista.
+                  False (falso)      se X nao estiver na lista.
+
+  Como modificar: Altere a lista e/ou o valor de X no print:
+                  print(verificar_existencia([4, 7, 1, 9], 7))
+                                              ^--------^    ^
+                                              lista         X
+
+  Exemplos      :
+                  verificar_existencia([1, 2, 3], 3)  -> resultado: True
+                  verificar_existencia([1, 2, 3], 5)  -> resultado: False
+                  verificar_existencia([0, 1], 0)     -> resultado: True
+                  verificar_existencia([], 1)          -> resultado: False
+
+--------------------------------------------------------------------------------
+QUESTAO-7 | INVERTER_LISTA
+--------------------------------------------------------------------------------
+  O que faz     : Cria e retorna uma nova lista com os elementos na ordem
+                  inversa. A lista original nao e alterada.
+                  Feito manualmente, sem usar reverse() ou slicing [::-1].
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [1, 2, 3, 4]
+
+  Retorna       : Uma nova lista com os elementos em ordem invertida.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(inverter_lista([1, 2, 3, 4]))
+                                        ^---------^
+                                        mude estes valores
+
+  Exemplos      :
+                  inverter_lista([5])                  -> resultado: [5]
+                  inverter_lista([1, 2])               -> resultado: [2, 1]
+                  inverter_lista([3, 3, 3])            -> resultado: [3, 3, 3]
+                  inverter_lista([10, 20, 30, 40])     -> resultado: [40, 30, 20, 10]
+
+  Cuidados      : A lista original nao e modificada; uma nova e criada.
+
+--------------------------------------------------------------------------------
+QUESTAO-8 | CONTAR_OCORRENCIAS
+--------------------------------------------------------------------------------
+  O que faz     : Conta quantas vezes um numero X aparece dentro da lista.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  x     -> o numero a ser contado.
+                  Exemplo: lista = [1, 2, 2, 3, 2, 4], x = 2
+
+  Retorna       : Um inteiro com o numero de vezes que X aparece.
+
+  Como modificar: Altere a lista e/ou o valor de X no print:
+                  print(contar_ocorrencias([1, 2, 2, 3, 2, 4], 2))
+                                            ^----------------^   ^
+                                            lista                X
+
+  Exemplos      :
+                  contar_ocorrencias([1, 1, 1], 1)    -> resultado: 3
+                  contar_ocorrencias([1, 2, 3], 5)    -> resultado: 0
+                  contar_ocorrencias([0, 0, 1], 0)    -> resultado: 2
+                  contar_ocorrencias([], 1)            -> resultado: 0
+
+--------------------------------------------------------------------------------
+QUESTAO-9 | SOMA_DOS_VALORES_POSITIVOS
+--------------------------------------------------------------------------------
+  O que faz     : Soma apenas os numeros positivos da lista.
+                  Numeros negativos e o zero sao ignorados.
+
+  Parametros    : lista -> uma lista de numeros inteiros (pode ter negativos).
+                  Exemplo: [-1, 2, -3, 4, 5]
+
+  Retorna       : A soma de todos os numeros positivos (maiores que zero).
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(soma_positivos([-1, 2, -3, 4, 5]))
+                                        ^--------------^
+                                        mude estes valores
+
+  Exemplos      :
+                  soma_positivos([-1, -2, -3])         -> resultado: 0
+                  soma_positivos([1, 2, 3])            -> resultado: 6
+                  soma_positivos([0, 5, -5])           -> resultado: 5 (0 nao conta)
+                  soma_positivos([-10, 10])            -> resultado: 10
+
+  Cuidados      : O numero 0 nao e positivo, portanto nao entra na soma.
+
+--------------------------------------------------------------------------------
+QUESTAO-10 | PRODUTO_DOS_ELEMENTOS
+--------------------------------------------------------------------------------
+  O que faz     : Multiplica todos os elementos da lista entre si
+                  e retorna o resultado final.
+
+  Parametros    : lista -> uma lista de numeros inteiros.
+                  Exemplo: [1, 2, 3, 4]
+
+  Retorna       : O produto (multiplicacao) de todos os elementos.
+
+  Como modificar: Altere os numeros dentro dos colchetes no print:
+                  print(produto_elementos([1, 2, 3, 4]))
+                                           ^---------^
+                                           mude estes valores
+
+  Exemplos      :
+                  produto_elementos([5, 5])            -> resultado: 25
+                  produto_elementos([1, 1, 1])         -> resultado: 1
+                  produto_elementos([0, 2, 3])         -> resultado: 0 (qualquer numero * 0 = 0)
+                  produto_elementos([-2, 3])           -> resultado: -6
+
+  Cuidados      : Se qualquer elemento for 0, o resultado sera sempre 0.
+                  Numeros negativos afetam o sinal do resultado final.
+
+================================================================================
+PARTE II - STRINGS
+================================================================================
+
+--------------------------------------------------------------------------------
+QUESTAO-11 | CONTAR_VOGAIS
+--------------------------------------------------------------------------------
+  O que faz     : Percorre a string e conta quantas letras sao vogais.
+                  Considera vogais maiusculas e minusculas (a, e, i, o, u).
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "Programacao"
+
+  Retorna       : Um inteiro com a quantidade de vogais encontradas.
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(contar_vogais("Programacao"))
+                                       ^----------^
+                                       mude este texto
+
+  Exemplos      :
+                  contar_vogais("aeiou")              -> resultado: 5
+                  contar_vogais("python")             -> resultado: 1 (apenas o "o")
+                  contar_vogais("HELLO")              -> resultado: 2 (E e O)
+                  contar_vogais("bcd")                -> resultado: 0
+                  contar_vogais("")                   -> resultado: 0
+
+  Cuidados      : Espacos, numeros e pontuacao nao sao contados como vogais.
+
+--------------------------------------------------------------------------------
+QUESTAO-12 | CONTAR_CARACTERES
+--------------------------------------------------------------------------------
+  O que faz     : Conta o numero total de caracteres de uma string
+                  sem usar a funcao pronta len().
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "teste"
+
+  Retorna       : Um inteiro com o total de caracteres (incluindo espacos).
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(contar_caracteres("teste"))
+                                           ^---^
+                                           mude este texto
+
+  Exemplos      :
+                  contar_caracteres("ola")            -> resultado: 3
+                  contar_caracteres("ola mundo")      -> resultado: 9 (espaco conta)
+                  contar_caracteres("")               -> resultado: 0
+                  contar_caracteres("   ")            -> resultado: 3 (3 espacos)
+
+  Cuidados      : Espacos tambem sao contados como caracteres.
+
+--------------------------------------------------------------------------------
+QUESTAO-13 | VERIFICAR_PALINDROMO
+--------------------------------------------------------------------------------
+  O que faz     : Verifica se uma palavra e um palindromo, ou seja,
+                  se ela e igual lida de tras para frente.
+                  Ignora a diferenca entre maiusculas e minusculas.
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "arara"
+
+  Retorna       : True  se for palindromo.
+                  False se nao for palindromo.
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(verificar_palindromo("arara"))
+                                              ^---^
+                                              mude este texto
+
+  Exemplos      :
+                  verificar_palindromo("ovo")         -> resultado: True
+                  verificar_palindromo("Ana")         -> resultado: True (ignora caixa)
+                  verificar_palindromo("radar")       -> resultado: True
+                  verificar_palindromo("python")      -> resultado: False
+                  verificar_palindromo("a")           -> resultado: True (1 letra sempre e)
+
+  Cuidados      : Espacos e pontuacao interferem na verificacao.
+                  "A man" NAO seria palindromo pois o espaco e considerado.
+
+--------------------------------------------------------------------------------
+QUESTAO-14 | CONTAR_OCORRENCIAS_DE_UM_CARACTERE
+--------------------------------------------------------------------------------
+  O que faz     : Conta quantas vezes um caractere especifico aparece
+                  dentro de uma string.
+
+  Parametros    : s -> uma string de texto.
+                  c -> o caractere a ser contado (entre aspas simples).
+                  Exemplo: s = "banana", c = 'a'
+
+  Retorna       : Um inteiro com o numero de ocorrencias do caractere.
+
+  Como modificar: Altere a string e/ou o caractere no print:
+                  print(contar_ocorrencias_char("banana", 'a'))
+                                                ^------^   ^
+                                                string   caractere
+
+  Exemplos      :
+                  contar_ocorrencias_char("hello", 'l')  -> resultado: 2
+                  contar_ocorrencias_char("aaa", 'a')    -> resultado: 3
+                  contar_ocorrencias_char("abc", 'z')    -> resultado: 0
+                  contar_ocorrencias_char("", 'a')       -> resultado: 0
+
+  Cuidados      : A busca diferencia maiusculas de minusculas.
+                  Buscar 'A' em "banana" retorna 0, pois so ha 'a' minusculo.
+
+--------------------------------------------------------------------------------
+QUESTAO-15 | SUBSTITUIR_CARACTERE
+--------------------------------------------------------------------------------
+  O que faz     : Cria uma nova string substituindo todas as ocorrencias
+                  do caractere c1 pelo caractere c2.
+
+  Parametros    : s  -> a string original.
+                  c1 -> o caractere a ser substituido.
+                  c2 -> o caractere substituto.
+                  Exemplo: s = "banana", c1 = 'a', c2 = 'o'
+
+  Retorna       : Uma nova string com todas as trocas feitas.
+
+  Como modificar: Altere a string e/ou os caracteres no print:
+                  print(substituir_caractere("banana", 'a', 'o'))
+                                              ^------^  ^    ^
+                                              string    c1   c2
+
+  Exemplos      :
+                  substituir_caractere("hello", 'l', 'r')  -> resultado: "herro"
+                  substituir_caractere("aaa", 'a', 'b')    -> resultado: "bbb"
+                  substituir_caractere("abc", 'z', 'x')    -> resultado: "abc" (nada muda)
+                  substituir_caractere("ola", 'o', 'O')    -> resultado: "Ola"
+
+  Cuidados      : A string original nao e modificada; uma nova e criada.
+                  A substituicao diferencia maiusculas de minusculas.
+
+--------------------------------------------------------------------------------
+QUESTAO-16 | MAIUSCULAS_E_MINUSCULAS
+--------------------------------------------------------------------------------
+  O que faz     : Percorre a string e conta separadamente quantas letras
+                  sao maiusculas e quantas sao minusculas.
+                  Numeros, espacos e simbolos sao ignorados.
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "AbCde"
+
+  Retorna       : Uma string formatada no padrao:
+                  "Maiusculas: X | Minusculas: Y"
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(maiusculas_minusculas("AbCde"))
+                                              ^---^
+                                              mude este texto
+
+  Exemplos      :
+                  maiusculas_minusculas("ABC")     -> Maiusculas: 3 | Minusculas: 0
+                  maiusculas_minusculas("abc")     -> Maiusculas: 0 | Minusculas: 3
+                  maiusculas_minusculas("Python3") -> Maiusculas: 1 | Minusculas: 5
+                  maiusculas_minusculas("123 !@")  -> Maiusculas: 0 | Minusculas: 0
+
+  Cuidados      : Numeros, espacos e simbolos nao entram na contagem.
+
+--------------------------------------------------------------------------------
+QUESTAO-17 | REMOVER_ESPACOS
+--------------------------------------------------------------------------------
+  O que faz     : Cria uma nova string igual a original, porem sem
+                  nenhum espaco em branco.
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "ola mundo"
+
+  Retorna       : A string sem espacos.
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(remover_espacos("ola mundo"))
+                                         ^--------^
+                                         mude este texto
+
+  Exemplos      :
+                  remover_espacos("ola mundo")      -> resultado: "olamundo"
+                  remover_espacos("a b c")          -> resultado: "abc"
+                  remover_espacos("semespaco")      -> resultado: "semespaco"
+                  remover_espacos("   ")            -> resultado: ""
+
+  Cuidados      : Apenas espacos simples sao removidos.
+                  A string original nao e modificada.
+
+--------------------------------------------------------------------------------
+QUESTAO-18 | PRIMEIRO_CARACTERE
+--------------------------------------------------------------------------------
+  O que faz     : Retorna o primeiro caractere de uma string.
+                  Se a string estiver vazia, retorna None (valor nulo).
+
+  Parametros    : s -> uma string de texto.
+                  Exemplo: "python"
+
+  Retorna       : O primeiro caractere da string.
+                  None se a string for vazia.
+
+  Como modificar: Altere o texto entre as aspas no print:
+                  print(primeiro_caractere("python"))
+                                            ^----^
+                                            mude este texto
+
+  Exemplos      :
+                  primeiro_caractere("hello")        -> resultado: 'h'
+                  primeiro_caractere("  ola")        -> resultado: ' ' (espaco)
+                  primeiro_caractere("123")          -> resultado: '1'
+                  primeiro_caractere("")             -> resultado: None
+
+  Cuidados      : Se a string comecar com espaco, o espaco sera retornado.
+                  Strings vazias ("") retornam None, nao geram erro.
+
+================================================================================
+DICAS GERAIS PARA MODIFICAR O CODIGO
+================================================================================
+
+  1. LISTAS: sempre use colchetes [ ] e separe os valores por virgula.
+             Exemplo correto  : [1, 2, 3, 4]
+             Exemplo incorreto: (1, 2, 3, 4) ou 1, 2, 3, 4
+
+  2. STRINGS: sempre coloque o texto entre aspas duplas " " ou simples ' '.
+              Exemplo correto  : "hello" ou 'hello'
+              Exemplo incorreto: hello
+
+  3. CARACTERES: ao passar um unico caractere como parametro, use aspas simples.
+                 Exemplo correto  : 'a'
+                 Exemplo incorreto: a  ou  "ab"
+
+  4. NONE: e o valor nulo do Python. Nao e uma string, nao use aspas.
+           Correto: None
+           Incorreto: "None"
+
+  5. TRUE / FALSE: sao os valores logicos do Python. Comecam com letra maiuscula.
+                   Correto  : True / False
+                   Incorreto: true / false / "True"
+
+================================================================================
+FIM DO GUIA
+================================================================================
